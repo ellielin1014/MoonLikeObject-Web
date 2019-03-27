@@ -1,0 +1,42 @@
+
+body{
+  font-family: sans-serif;
+}
+
+.button {
+  border: none;
+
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button:focus{
+  border: 2px solid purple;
+  outline: none;
+}
+
+#btn {
+  border: 1px solid grey;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+
+#bt1 {background-color: #1A535C;} /* 26, 83, 92 */
+#bt2  {background-color: #4ECDC4;} /*78,205,196*/
+#bt3  {background-color: #F7FFF7;color:grey } /*247,255,247*/
+#bt4  {background-color: #FF6B6B;} /*255, 107, 107*/
+#bt5  {background-color: #FFE66D;} /*255,230,109*/
+#bt6  {background-color: #5BC0EB;} /*198,61,92*/
