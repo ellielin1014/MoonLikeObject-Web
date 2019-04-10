@@ -9,6 +9,7 @@ var username = document.getElementById('inputName');
 var inputR;
 var inputG;
 var inputB;
+var stationNum;
 
 function setup() {
   // createCanvas(400, 400);
@@ -33,7 +34,8 @@ function OnBtnClicked(){
     msg: msg.value,
     r:inputR,
     g:inputG,
-    b:inputB
+    b:inputB,
+    n:stationNum
   }
 
   //1.sending data called "new message" including data to server
@@ -44,42 +46,42 @@ function OnBtnClicked(){
 
 
 //HTML chores
-function color1selected(){
-   btn.style.backgroundColor= "#1A535C";
-   inputR = "26";
-   inputG = "83";
-   inputB = "92";
-}
 
 function color2selected(){
    btn.style.backgroundColor= "#4ECDC4";
    inputR = "78";
    inputG = "205";
    inputB = "196";
+   stationNum = "1";
 }
 function color3selected(){
    btn.style.backgroundColor= "#F7FFF7"; //247,255,247
    inputR = "247";
    inputG = "255";
    inputB = "247";
+   stationNum = "2";
 }
 function color4selected(){
    btn.style.backgroundColor= "#FF6B6B"; //255, 107, 107
    inputR = "255";
    inputG = "107";
    inputB = "107";
+   stationNum = "3";
 }
 function color5selected(){
    btn.style.backgroundColor= "#FFE66D";//255,230,109
    inputR = "255";
    inputG = "230";
    inputB = "109";
+   stationNum = "4";
 }
 function color6selected(){
    btn.style.backgroundColor= "#5BC0EB";//198,61,92
    inputR = "198";
    inputG = "61";
    inputB = "92";
+   stationNum = "5";
+
 }
 
 function draw() {

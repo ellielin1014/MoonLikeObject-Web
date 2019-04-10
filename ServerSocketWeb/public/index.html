@@ -12,20 +12,24 @@
 
   </head>
   <body>
-    <h1 id=notif>Hey</h1>
-    <p>Send a message to the moon:</p>
-    <p>Name:</p>
-    <input id=inputName></input>
-    <p>Message:</p>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1 id=notif>Create Your Asteroid</h1>
+    
+    <p>Choose a Shape</p>
+    <button  class="button" class="shape" id="shape1" onfocus="shape1selected()" ontouchstart="shape1selected()">Shape 1</button>
+      <button  class="button" class="shape" id="shape2" onfocus="shape2selected()" ontouchstart="shape2selected()">Shape 2</button>
+      <button  class="button" class="shape" id="shape3" onfocus="shape3selected()" ontouchstart="shape3selected()">Shape 3</button>
+    
+    <p>Choose</p>
     <input id=inputMsg></input>
-    <p>Choose your Asteroid's color:</p>
+    <p>Choose your Launch Station</p>
     <div id = palette>
-      <button  class="button" id="bt1" onfocus="color1selected()" ontouchstart="color1selected()">Green</button>
-      <button  class="button" id="bt2" onfocus="color2selected()" ontouchstart="color2selected()">Turquoise</button>
-      <button  class="button" id="bt3" onfocus="color3selected()" ontouchstart="color3selected()">Cream</button>
-      <button  class="button" id="bt4" onfocus="color4selected()" ontouchstart="color4selected()">Red</button>
-      <button  class="button" id="bt5" onfocus="color5selected()" ontouchstart="color5selected()">Musturd</button>
-      <button  class="button" id="bt6" onfocus="color6selected()" ontouchstart="color6selected()">Blue</button>
+
+      <button  class="button" id="bt2" onfocus="color2selected()" ontouchstart="color2selected()">Station 1</button>
+      <button  class="button" id="bt3" onfocus="color3selected()" ontouchstart="color3selected()">Station 2</button>
+      <button  class="button" id="bt4" onfocus="color4selected()" ontouchstart="color4selected()">Station 3</button>
+      <button  class="button" id="bt5" onfocus="color5selected()" ontouchstart="color5selected()">Station 4</button>
+      <button  class="button" id="bt6" onfocus="color6selected()" ontouchstart="color6selected()">Station 5</button>
 
     </div>
     <button id=btn onclick="OnBtnClicked()">Send My Asteroid</button>
