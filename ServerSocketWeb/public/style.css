@@ -43,8 +43,16 @@ body{
 #bt5  {background-color: #5BC0EB;} /*198,61,92*/
 
 
-.lauchPage,.launchStationContainer,.nameContainer,.sizeContainer,.shapeContainer{
+.launchPage,.launchStationContainer,.nameContainer,.sizeContainer,.shapeContainer{
   display:none;
+}
+
+#swipeZone {
+  left:0;
+  top:0;
+  position: absolute;
+  height:100%;
+  width: 100%;
 }
 
 .next{

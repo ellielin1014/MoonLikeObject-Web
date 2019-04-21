@@ -17,6 +17,7 @@ var AstroidName = document.getElementById('asteroidName');
 var storedName = " ";
 var stationColor = " ";
 var AstIndex;
+var Velocity; 
 
 function setup() {
   // createCanvas(400, 400);
@@ -34,7 +35,7 @@ function showNotif(data){
 }
 
  //this function triggers the web client to send data to the server
-function OnBtnClicked(){
+function sendData(){
 
   var data = {
     name: storedName,
@@ -42,7 +43,8 @@ function OnBtnClicked(){
     g:inputG,
     b:inputB,
     n:stationNum,
-    a: AstIndex
+    a: AstIndex,
+    v: Velocity
   }
 
 
@@ -161,9 +163,9 @@ function station5selected(){
    //btn.style.backgroundColor= "#5BC0EB";//198,61,92
    stationColor = "#5BC0EB";
    stationNum = "5";
-   inputR = "198";
-   inputG = "61";
-   inputB = "92";
+   inputR = "91";
+   inputG = "192";
+   inputB = "235";
    $("#shoot").css("background-color", stationColor);
 }
 
@@ -175,7 +177,7 @@ function goToShoot(){
   } else {
     $("#shoot").attr("disabled", false);
     $(".launchStationContainer").css("display", "none");
-    $(".lauchPage").css("display", "inline-block");
+    $(".launchPage").css("display", "inline-block");
     $("#shoot").css("background-color", stationColor);
     $("#triangle").css("border-bottom", "solid 130px " + stationColor);
     $("#stationNum").text(stationNum);
@@ -217,6 +219,53 @@ function decideShapes(){
    }
 
 }
+
+var touchstartX;
+var touchstartY;
+var touchendX;
+var touchendY;
+var startTime;
+var elapsedTime;
+var dist;
+
+var gesuredZone = document.getElementById('swipeZone');
+
+gesuredZone.addEventListener('touchstart', function(event) {
+    //touchstartX = event.changedTouches[0].screenX;
+    touchstartY = event.changedTouches[0].screenY;
+    startTime = new Date().getTime();
+}, false);
+
+gesuredZone.addEventListener('touchend', function(event) {
+   // touchendX = event.changedTouches[0].screenX;
+    touchendY = event.changedTouches[0].screenY;
+    elapsedTime = (new Date().getTime() - startTime)/100;
+    console.log("time: "+elapsedTime);
+    dist = abs(touchendY-touchstartY);
+    console.log("distance: " + dist);
+    handleGesure();
+}, false); 
+
+function handleGesure() {
+    var swiped = 'swiped: ';
+    if (touchendY < touchstartY) {
+      //calculate speed = distance/time
+      var speed =  Math.floor( dist/elapsedTime );
+      var vel = Math.floor(map(speed, 3, 200, 5, 50));
+      Velocity = vel.toString();
+      console.log(swiped + 'up!' + " speed: " + Velocity);
+      sendData();
+    }
+    if (touchendY > touchstartY) {
+      //wrong direction, don't register as shoot
+      console.log(swiped + 'down!');
+    }
+    if (touchendY == touchstartY) {
+      console.log('tap!');
+    }
+}
+
+
   
 function draw() {
 //  background(20);
