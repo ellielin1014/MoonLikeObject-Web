@@ -17,7 +17,7 @@
     <div id="startScreen">
         <h1 id=title>Create Your Asteroid</h1>
 
-        <button class="next" id=start onclick="goToShape()">Start</button>
+        <button class="next" id="start" onclick="goToShape()">Start</button>
     </div>
     
     
@@ -27,7 +27,7 @@
         <button  class="button" class="shape" id="shape2" onfocus="shape2selected()" ontouchstart="shape2selected()">Irregular</button>
         <button  class="button" class="shape" id="shape3" onfocus="shape3selected()" ontouchstart="shape3selected()">Long</button>
       
-        <button class="next" id=shapeNext onclick="goToSize()">Next</button>
+        <button class="next" id="shapeNext" onclick="goToSize()">Next</button>
     </div>
     
     <div class="sizeContainer">
@@ -36,20 +36,20 @@
         <button  class="button" class="size" id="size2" onfocus="size2selected()" ontouchstart="size2selected()">Medium</button>
         <button  class="button" class="size" id="size3" onfocus="size3selected()" ontouchstart="size3selected()">Large</button>
         
-        <button class="next" id=sizeNext onclick="goToName()">Next</button>
+        <button class="next" id="sizeNext" onclick="goToName()">Next</button>
     </div>
     
     <div class="nameContainer">
         <p class="instruction">Name your Asteroid</p>
         <input id=asteroidName type="text">
 
-        <button class="next" id=nameNext onclick="goToStation()">Next</button>
+        <button class="next" id="nameNext" onclick="goToStation()">Next</button>
     </div>
     
 
     <div class="launchStationContainer">
         <p class="instruction">Choose your Launch Station</p>
-        <div id = stations>
+        <div id ="stations">
     
           <button  class="button" id="bt1" onfocus="station1selected()" ontouchstart="station1selected()">Station 1</button>
           <button  class="button" id="bt2" onfocus="station2selected()" ontouchstart="station2selected()">Station 2</button>
@@ -72,25 +72,20 @@
     </div>
 
     <div id="loading">
-        <p>Your asteroid is flying to the moon...</p>
-      <svg>
-		<defs>
-				<filter id="goo">
-						<feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
-						<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-						
-				</filter>
-		</defs>
-       </svg>
-        
-        <div class="container goo2">
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-		<div></div>
-</div>
+        <p id="loadingMessage">Your asteroid is flying to the moon...</p>
+        <img id="loadingGIF" src="images/loading2.gif">
     
+    </div>
+
+    <div id="infoPage">
+        <h1>Your asteroid created a Crater!</h1>
+        <p>your crater is very similat to this crater on the actual Moon:</p>
+        <p id="craterName">Aristoteles (87km)</p>
+        <img id="craterImage" src="images/Aristoteles.jpg">
+        <p id="CraterInfo">The size and shape of your crater is really similar to our moon’s crater Aristoteles! Aristoteles is unique for having an almost hexagonal shape because of its complex terraces at the inner walls.  
+</p>
+
+        <button id="learnMore">Learn More</button>
     </div>
    
     <script src="sketch.js"></script>
