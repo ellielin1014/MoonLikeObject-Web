@@ -193,57 +193,30 @@ function decideShapes(){
 
    if(shape == "shape1" && size == "size1" ){
     AstIndex = "1";  //circular small
-    $("#craterName").html("Aristoteles (87 km)");
-    $("#craterImage").attr('src', 'images/Aristoteles.jpg');
-    $("#CraterInfo").html("The size and shape of your crater is really similar to our moon’s crater Aristoteles! Aristoteles is unique for having an almost hexagonal shape because of its complex terraces at the inner walls.");
    }
    if(shape == "shape1" && size == "size2" ){
     AstIndex = "2";  //circular medium
-    $("#craterName").html("Longomontanus (145 km)");
-    $("#craterImage").attr('src', 'images/Longomontanus.jpg');
-    $("#CraterInfo").html("The shape and size of your crater is really similar to our moon’s crater Longomontanus! Craters like Longomontanus are referred to as “walled plains” because they don’t have a central peak and are generally quite flat throughout.");
    }
    if(shape == "shape1" && size == "size3" ){
     AstIndex = "3";  //circular big
-    $("#craterName").html("Bailly (303 km)");
-    $("#craterImage").attr('src', 'images/Bailly.jpg');
-    $("#CraterInfo").html("The size and shape of your crater is really similar to the Moon’s own crater Bailly! Bailly is the largest crater on the near side of the moon at around 303 km in diameter. The sheer size of Bailly makes it home to many other craters.");
    }
    if(shape == "shape2" && size == "size1" ){
     AstIndex = "4";  //irregular small
-    $("#craterName").html("Picard (23 km)");
-    $("#craterImage").attr('src', 'images/Picard.jpg');
-    $("#CraterInfo").html("Your crater was 23 km in diameter, which is really similar to our moon’s crater Piccolomini!The crater is located in a lunar mare (plains formed by volcanic eruptions) called “Mare Crisium” and is the largest non-flooded crater in that area.");
    }
    if(shape == "shape2" && size == "size2" ){
     AstIndex = "5";  //irregular medium
-    $("#craterName").html("Piccolomini (88 km)");
-    $("#craterImage").attr('src', 'images/Piccolomini.jpg');
-    $("#CraterInfo").html("Your crater was 88 km in diameter, which is really similar to our moon’s crater Piccolomini! Piccolomini was formed over 3 billion years ago, and at the center of the crater is a peak that rises about 2 km above the floor around it.");
    }
    if(shape == "shape2" && size == "size3" ){
     AstIndex = "6";  //irregular big
-    $("#craterName").html("Clavius (231 km)");
-    $("#craterImage").attr('src', 'images/Clavius.jpg');
-    $("#CraterInfo").html("Your crater was around 231 km in diameter, that’s about as big as our own moon’s crater: Clavius! Clavius is one of the largest craters on the Moon, and also one of the oldest. This crater in particular was probably formed around 4 billion years ago!");
    }
    if(shape == "shape3" && size == "size1" ){
     AstIndex = "7";  //long small
-    $("#craterName").html("Shackleton (21 km)");
-    $("#craterImage").attr('src', 'images/Shackleton.jpg');
-    $("#CraterInfo").html("The size of this crater is really similar to our moon’s crater Shackleton! Scientists call craters like Shackleton “a crater of eternal darkness” because the interior is perpetually kept in shadow.");
    }
    if(shape == "shape3" && size == "size2" ){
     AstIndex = "8";  //long medium
-    $("#craterName").html("Tycho (86 km)");
-    $("#craterImage").attr('src', 'images/Tycho.png');
-    $("#CraterInfo").html("Your crater on the moon-like object is around 86 km in diameter, which is really similar to our moon’s crater Tycho! Tycho is a crater that’s around 108 million years old, making it one of the younger craters on the moon.");
    }
    if(shape == "shape3" && size == "size3" ){
     AstIndex = "9";  //long large
-    $("#craterName").html("Schiller (179 x 71 km)");
-    $("#craterImage").attr('src', 'images/Schiller.jpg');
-    $("#CraterInfo").html("The size and shape of your asteroid is really similar to our moon’s crater Schiller! Schiller looks unique because it may actually be a fusion of two craters, resulting in an elongated shape that looks a lot like an oval.");
    }
 
 }
@@ -282,18 +255,8 @@ function handleGesure() {
       var vel = Math.floor(map(speed, 3, 200, 5, 50));
       Velocity = vel.toString();
       console.log(swiped + 'up!' + " speed: " + Velocity);
-      $("#loading").css("display","inherit");
       sendData();
-      var timeleft = 3;
-      var downloadTimer = setInterval(function(){
-       timeleft -= 1;
-      if(timeleft <= 0){
-          clearInterval(downloadTimer);
-          $("#loading").css("display","none");
-          $("#infoPage").css("display","inherit");
-        }
-        }, 1000);
-      }
+    }
     if (touchendY > touchstartY) {
       //wrong direction, don't register as shoot
       console.log(swiped + 'down!');
@@ -301,18 +264,6 @@ function handleGesure() {
     if (touchendY == touchstartY) {
       console.log('tap!');
     }
-}
-
-function countdownTimer(){
-  var timeleft = 3;
-  var downloadTimer = setInterval(function(){
-     timeleft -= 1;
-    if(timeleft <= 0){
-      clearInterval(downloadTimer);
-        $("#loading").css("display","none");
-        $("#infoPage").css("display","inherit");
-      }
-  }, 300);
 }
 
 
