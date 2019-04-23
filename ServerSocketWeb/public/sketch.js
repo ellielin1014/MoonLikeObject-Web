@@ -1,4 +1,5 @@
 //client side code
+//dreamy editing
 
 var socket;
 var msg = document.getElementById('inputMsg');
@@ -17,7 +18,7 @@ var AstroidName = document.getElementById('asteroidName');
 var storedName = " ";
 var stationColor = " ";
 var AstIndex;
-var Velocity; 
+var Velocity;
 
 function setup() {
   // createCanvas(400, 400);
@@ -64,7 +65,7 @@ function goToShape(){
 
 function shape1selected(){
    shape = "shape1";
-   
+
 }
 
 function shape2selected(){
@@ -83,12 +84,12 @@ function goToSize(){
     $(".shapeContainer").css("display", "none");
     $(".sizeContainer").css("display", "inline-block");
   }
-  
+
 }
 
 function size1selected(){
   size = "size1";
-  
+
 }
 
 function size2selected(){
@@ -110,7 +111,7 @@ function goToName(){
 }
 
 function goToStation(){
-  
+
   if (AstroidName.value.length == 0){
     alert("Please name your asteroid");
     return false;
@@ -119,7 +120,7 @@ function goToStation(){
     $(".nameContainer").css("display", "none");
     $(".launchStationContainer").css("display", "inline-block");
   }
- 
+
 }
 
 function station1selected(){
@@ -181,7 +182,7 @@ function goToShoot(){
     $("#shoot").css("background-color", stationColor);
     $("#triangle").css("border-bottom", "solid 130px " + stationColor);
     $("#stationNum").text(stationNum);
-    
+
     $("#insertName").html("\"" + storedName +"\"");
     decideShapes();
   }
@@ -244,7 +245,7 @@ gesuredZone.addEventListener('touchend', function(event) {
     dist = abs(touchendY-touchstartY);
     console.log("distance: " + dist);
     handleGesure();
-}, false); 
+}, false);
 
 function handleGesure() {
     var swiped = 'swiped: ';
@@ -266,7 +267,7 @@ function handleGesure() {
 }
 
 
-  
+
 function draw() {
 //  background(20);
 
