@@ -23,25 +23,25 @@
     
     <div class="shapeContainer">
         <p class="instruction">Choose a Shape</p>
-        <button  class="button" class="shape" id="shape1" onfocus="shape1selected()" ontouchstart="shape1selected()">Shape 1</button>
-        <button  class="button" class="shape" id="shape2" onfocus="shape2selected()" ontouchstart="shape2selected()">Shape 2</button>
-        <button  class="button" class="shape" id="shape3" onfocus="shape3selected()" ontouchstart="shape3selected()">Shape 3</button>
+        <button  class="button" class="shape" id="shape1" onfocus="shape1selected()" ontouchstart="shape1selected()">Circular</button>
+        <button  class="button" class="shape" id="shape2" onfocus="shape2selected()" ontouchstart="shape2selected()">Irregular</button>
+        <button  class="button" class="shape" id="shape3" onfocus="shape3selected()" ontouchstart="shape3selected()">Long</button>
       
         <button class="next" id=shapeNext onclick="goToSize()">Next</button>
     </div>
     
     <div class="sizeContainer">
         <p class="instruction">Choose a Size</p>
-        <button  class="button" class="size" id="size1" onfocus="size1selected()" ontouchstart="size1selected()">Size 1</button>
-        <button  class="button" class="size" id="size2" onfocus="size2selected()" ontouchstart="size2selected()">Size 2</button>
-        <button  class="button" class="size" id="size3" onfocus="size3selected()" ontouchstart="size3selected()">Size 3</button>
+        <button  class="button" class="size" id="size1" onfocus="size1selected()" ontouchstart="size1selected()">Small</button>
+        <button  class="button" class="size" id="size2" onfocus="size2selected()" ontouchstart="size2selected()">Medium</button>
+        <button  class="button" class="size" id="size3" onfocus="size3selected()" ontouchstart="size3selected()">Large</button>
         
         <button class="next" id=sizeNext onclick="goToName()">Next</button>
     </div>
     
     <div class="nameContainer">
         <p class="instruction">Name your Asteroid</p>
-        <input id=asteroidName type="text"></input>
+        <input id=asteroidName type="text">
 
         <button class="next" id=nameNext onclick="goToStation()">Next</button>
     </div>
@@ -69,6 +69,28 @@
           <p id="stationNum">2</p>
         </div>
          <!-- <button id=btn onclick="OnBtnClicked()"></button> -->
+    </div>
+
+    <div id="loading">
+        <p>Your asteroid is flying to the moon...</p>
+      <svg>
+		<defs>
+				<filter id="goo">
+						<feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur" />
+						<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+						
+				</filter>
+		</defs>
+       </svg>
+        
+        <div class="container goo2">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+</div>
+    
     </div>
    
     <script src="sketch.js"></script>
